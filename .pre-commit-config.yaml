@@ -7,6 +7,6 @@ repos:
         args: [--fix]
       - id: ruff-format
         files: ./ruff_check/
-        args: [-diff]
+        args: [--diff]
 
 
