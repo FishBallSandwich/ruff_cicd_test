@@ -4,9 +4,9 @@ repos:
     hooks:
       - id: ruff
         files: ./ruff_check/
-        args: [./ruff_check/main.py]
+        args: [--fix]
       - id: ruff-format
         files: ./ruff_check/
-        args: [./ruff_check/main.py]
+        args: [-diff]
 
 
