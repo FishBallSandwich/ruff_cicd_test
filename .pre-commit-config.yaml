@@ -3,9 +3,13 @@ repos:
     rev: v0.6.3
     hooks:
       - id: ruff
-        args: [ ./ruff_check/*.py --fix ]
+        entry: ruff check ./ruff_check/ --force-exclude --fix
+
+        #args: [ ./ruff_check/*.py --fix ]
 
       - id: ruff-format
-        args: [ ./ruff_check/*.py --diff ]
+        entry: ruff format ./ruff_check/ --force-exclude
+
+        #args: [ ./ruff_check/*.py --diff ]
 
 
