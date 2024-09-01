@@ -26,11 +26,9 @@ jobs:
 
       - name: Run Ruff Formatter
         uses: chartboost/ruff-action@v1
-        run: |
-          ls -R
-          ls -l ruff_check
         with:
-          args: 'format ./ruff_check/main.py --check'
+          src: './ruff_check'
+          args: 'format --check'
         #continue-on-error: true
 
       - name: Run Ruff Linter
