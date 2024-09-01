@@ -1,1 +1,1 @@
-ruff_skip/test2.py
+ruff_skip/
