@@ -3,7 +3,7 @@ repos:
     rev: v0.6.3
     hooks:
       - id: ruff
-        args: ['ruff_check/*.py']
+        args: ['ruff_check/*.py', '--fix']
       - id: ruff-format
         args: ['ruff_check/main.py']
 
