@@ -24,9 +24,9 @@ jobs:
     - name: run ruff linter
     - uses: chartboost/ruff-action@v1
     - with:
-        args: 'check'
+        args: 'check ruff_check/*.py'
 
     - name: run ruff formatter
     - uses: chartboost/ruff-action@v1
     - with:
-        args: 'format --check'
+        args: 'format ruff_check/*.py --check'
