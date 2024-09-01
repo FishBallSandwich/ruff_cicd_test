@@ -3,9 +3,9 @@ repos:
     rev: v0.6.3
     hooks:
       - id: ruff
-        args: [./ruff_check/ --fix]
+        args: [./ruff_check/*.py --fix]
 
       - id: ruff-format
-        args: [./ruff_check/ --diff]
+        args: [./ruff_check/*.py --diff]
 
 
