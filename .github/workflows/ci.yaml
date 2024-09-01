@@ -1,0 +1,55 @@
+name: CI Checks
+
+on:
+  pull_request:
+    branches:
+      - main
+    types: [opened, synchronize, reopened, closed]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Run Ruff Formatter
+        uses: chartboost/ruff-action@v1
+        with:
+          src: './ruff_check'
+          args: 'format --check'
+        #continue-on-error: true
+
+      - name: Run Ruff Linter
+        uses: chartboost/ruff-action@v1
+        with:
+          src: './ruff_check'
+          args: 'check --diff'
+        #continue-on-error: true
+
+      - name: List files
+        run: |
+          pwd
+          ls -R
+          ls -l ruff_check
+
+      ### this would not work ###
+      #- name: Run Ruff Formatter 2
+      #  uses: chartboost/ruff-action@v1
+      #  with:
+      #    args: 'format @ruff_args.txt --check'
+      #  continue-on-error: true
+
+      ### this would not work ###
+      #- name: Run Ruff Formatter 1
+      #  uses: chartboost/ruff-action@v1
+      #  with:
+      #    args: 'check ./ruff_check --diff'
+
+

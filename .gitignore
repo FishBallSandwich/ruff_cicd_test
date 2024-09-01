@@ -1,0 +1,21 @@
+# Virtual environment
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Byte-compiled files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+
+# Ruff
+.ruff_cache/
+
+
+# PyCharm-specific
+.idea/
