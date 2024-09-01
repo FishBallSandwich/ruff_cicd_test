@@ -3,8 +3,8 @@ repos:
     rev: v0.6.3
     hooks:
       - id: ruff
-        args: ['./ruff_check/']
+        args: ['ruff_check/']
       - id: ruff-format
-        args: ['./ruff_check/']
+        args: ['ruff_check/']
 
 
