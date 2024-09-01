@@ -34,7 +34,8 @@ jobs:
       - name: Run Ruff Linter
         uses: chartboost/ruff-action@v1
         with:
-          args: 'check ruff_check/*.py'
+          src: './ruff_check'
+          args: 'check --diff'
         #continue-on-error: true
 
 
