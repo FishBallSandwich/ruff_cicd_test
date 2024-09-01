@@ -19,11 +19,6 @@ jobs:
         with:
           python-version: '3.9'
 
-      - name: List files
-        run: |
-          ls -R
-          ls -l ruff_check
-
       - name: Run Ruff Formatter
         uses: chartboost/ruff-action@v1
         with:
@@ -38,13 +33,16 @@ jobs:
           args: 'check --diff'
         #continue-on-error: true
 
+      - name: List files
+        run: |
+          pwd
+          ls -R
+          ls -l ruff_check
+
       - name: Run Ruff Formatter 1
         uses: chartboost/ruff-action@v1
         with:
-    args:
-      - 'format'
-      - './ruff_check'
-      - '--check'
+          args: './ruff_check--diff'
 
       - name: Run Ruff Formatter 2
         uses: chartboost/ruff-action@v1
