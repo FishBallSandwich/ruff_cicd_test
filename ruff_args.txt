@@ -1,1 +1,1 @@
-ruff_skip/
+ruff_check/
