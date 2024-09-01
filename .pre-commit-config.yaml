@@ -3,8 +3,8 @@ repos:
     rev: v0.6.3
     hooks:
       - id: ruff
-        args: [./ruff_check/ --fix]
+        entry: ruff check ./ruff_check/ --force-exclude
       - id: ruff-format
-        args: [./ruff_check/ --fix]
+        entry: ruff format ./ruff_check/ --force-exclude
 
 
